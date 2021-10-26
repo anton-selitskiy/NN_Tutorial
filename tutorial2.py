@@ -79,6 +79,7 @@ for epoch in range(num_epochs):
   lossMovingAveraged = 0
   with trange(len(dataloader)) as t:
     for idx in t:
+        x_train, y_train = next(iterator)
         outputs = model(x_train)                        
         loss = criterion(outputs, y_train)
         loss.backward()                                
